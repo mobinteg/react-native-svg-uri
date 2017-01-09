@@ -82,7 +82,7 @@ class SvgUri extends Component{
             this.fecthSVGData(source.uri);
         }
     }
-  } 
+  }
 
   async fecthSVGData(uri){
      try {
@@ -113,6 +113,7 @@ class SvgUri extends Component{
             return <G key={i} {...componentAtts}>{childs}</G>;
         case 'path':
              componentAtts = this.obtainComponentAtts(node, PATH_ATTS, PATH_ATTS_TRANSFORM);
+             componentAtts.fill = this.props.pathFill
             return <Path key={i} {...componentAtts}>{childs}</Path>;
         case 'circle':
              componentAtts = this.obtainComponentAtts(node, CIRCLE_ATTS, CIRCLE_ATTS_TRANSFORM);
